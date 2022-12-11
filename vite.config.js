@@ -3,8 +3,8 @@ import path from "path";
 import config from "./config";
 import setupPlugins from "./build";
 
-export default defineConfig((command, _mode) => {
-  const isBuild = command != "build";
+export default defineConfig(({ command }) => {
+  const isBuild = command == "build";
   return {
     base: config.basePublicPath,
     plugins: setupPlugins(isBuild),

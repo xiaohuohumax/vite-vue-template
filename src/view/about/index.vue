@@ -7,9 +7,9 @@
   <button @click="test">axios</button>
   <span style="margin: 10px">|</span>
   <button @click="testStore.addNum()">pinia : {{ testStore.num }}</button>
-  <p>route</p>
+  <p>routes</p>
   <pre style="text-align: left">{{
-    JSON.stringify(router.getRoutes(), null, 4)
+    JSON.stringify(router.options.routes, null, 4)
   }}</pre>
 </template>
 <script setup>
@@ -26,4 +26,6 @@ function test() {
     .then((res) => alert(JSON.stringify(res.data)))
     .catch(alert);
 }
+
+console.log("routes", router.getRoutes());
 </script>
